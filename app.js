@@ -22,9 +22,8 @@
   // Initialize Application
   async function init() {
     loadSavedUser();
-    await fetchData();
-    setupRouter();
     setupEvents();
+    setupRouter();
     renderUserNav();
     updateRecallsBadge();
   }
@@ -63,13 +62,33 @@
 
   async function fetchData() {
     try {
-      const res = await fetch('/api/data');
+      const res = await fetch('/api/data', { signal: AbortSignal.timeout(15000) });
       if (!res.ok) throw new Error('Failed to fetch data');
-      state.data = await res.json();
+      const data = await res.json();
+      if (!data || !Array.isArray(data.batches) || !Array.isArray(data.users)) {
+        throw new Error('Invalid network data response');
+      }
+      state.data = data;
       return state.data;
     } catch (err) {
       console.error(err);
-      showToast('Error connecting to backend database', 'error');
+      showToast('Unable to load network data', 'error');
+      const mainArea = document.getElementById('content-area');
+      if (mainArea) {
+        mainArea.innerHTML = `
+          <section role="alert" class="max-w-xl mx-auto my-12 p-8 rounded-2xl border border-rose-500/30 bg-slate-900 text-slate-200">
+            <h2 class="text-xl font-semibold text-white mb-3">Network data is unavailable</h2>
+            <p class="text-sm text-slate-400 mb-6">TraceHarvest could not connect to its data service. Check your connection and try again. If this continues, the site administrator needs to connect a publicly hosted backend.</p>
+            <button type="button" id="retry-network-data" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400">Retry connection</button>
+          </section>`;
+        document.getElementById('retry-network-data').addEventListener('click', async (event) => {
+          const button = event.currentTarget;
+          button.disabled = true;
+          button.textContent = 'Connecting…';
+          await renderPage();
+          updateRecallsBadge();
+        });
+      }
     }
   }
 
@@ -164,6 +183,8 @@
   // Global Page Router
   async function renderPage() {
     if (!state.data) await fetchData();
+    if (!state.data) return;
+    updateRecallsBadge();
 
     const hash = window.location.hash.slice(1) || 'dashboard';
     const mainArea = document.getElementById('content-area');
