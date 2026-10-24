@@ -1,0 +1,4 @@
+[build]
+  base = "."
+  command = "mkdir -p dist/static && cp index.html dist/index.html && cp app.js styles.css dist/static/"
+  publish = "dist"
