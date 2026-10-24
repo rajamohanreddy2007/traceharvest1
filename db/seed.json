@@ -1,0 +1,890 @@
+{
+  "users": [
+    {
+      "id": "u-farmer-01",
+      "email": "farmer@traceharvest.ai",
+      "name": "Ramesh Naidu",
+      "role": "Farmer",
+      "organization": "Sri Krishna Agri Farms",
+      "location": "Tenali, Guntur District, AP",
+      "avatar": "\ud83d\udc68\u200d\ud83c\udf3e",
+      "phone": "+91 98480 12345",
+      "credibilityScore": 96
+    },
+    {
+      "id": "u-transporter-01",
+      "email": "transporter@traceharvest.ai",
+      "name": "K. Jagan Mohan",
+      "role": "Transporter",
+      "organization": "FastTrack ColdTrans AP",
+      "location": "Vijayawada Logistics Hub, AP",
+      "avatar": "\ud83d\ude9a",
+      "phone": "+91 94401 54321",
+      "credibilityScore": 92
+    },
+    {
+      "id": "u-warehouse-01",
+      "email": "warehouse@traceharvest.ai",
+      "name": "S. K. Verma",
+      "role": "Warehouse Manager",
+      "organization": "Guntur Central Cold Hub",
+      "location": "Industrial Corridor, Guntur, AP",
+      "avatar": "\ud83c\udfec",
+      "phone": "+91 86322 89900",
+      "credibilityScore": 95
+    },
+    {
+      "id": "u-retailer-01",
+      "email": "retailer@traceharvest.ai",
+      "name": "Priya Rao",
+      "role": "Retailer",
+      "organization": "Rythu Bazaar Superstore",
+      "location": "Benz Circle, Vijayawada, AP",
+      "avatar": "\ud83d\uded2",
+      "phone": "+91 86624 77123",
+      "credibilityScore": 98
+    },
+    {
+      "id": "u-admin-01",
+      "email": "admin@traceharvest.ai",
+      "name": "Dr. Aruna Reddy",
+      "role": "Food Safety Admin",
+      "organization": "Andhra Food Safety Authority (FSSAI Cell)",
+      "location": "Mangalagiri HQ, Guntur District, AP",
+      "avatar": "\ud83d\udee1\ufe0f",
+      "phone": "+91 86452 33445",
+      "credibilityScore": 100
+    },
+    {
+      "id": "u-consumer-01",
+      "email": "consumer@traceharvest.ai",
+      "name": "Aditi Sharma",
+      "role": "Consumer",
+      "organization": "Citizen Buyer & Health Advocate",
+      "location": "Visakhapatnam, AP",
+      "avatar": "\ud83d\udc69\u200d\ud83d\udcbc",
+      "phone": "+91 89125 99881",
+      "credibilityScore": 100
+    }
+  ],
+  "farms": [
+    {
+      "id": "FARM-AP-101",
+      "name": "Sri Krishna Agri Farms",
+      "owner": "Ramesh Naidu",
+      "region": "Tenali, Guntur District, Andhra Pradesh",
+      "coordinates": "16.2437\u00b0 N, 80.6400\u00b0 E",
+      "areaAcres": 45,
+      "crops": [
+        "Roma Tomatoes",
+        "Guntur Sannam Chillies"
+      ],
+      "certifications": [
+        "AP Organic Board (APEDA/2024)",
+        "IndGAP Level 2"
+      ],
+      "soilHealthScore": "89/100 (Optimal Nitrogen, Alkaline pH 6.8)"
+    },
+    {
+      "id": "FARM-AP-102",
+      "name": "Rayalaseema Orchards",
+      "owner": "Lakshmi Devi",
+      "region": "Bangarupalem, Chittoor District, Andhra Pradesh",
+      "coordinates": "13.2172\u00b0 N, 79.1007\u00b0 E",
+      "areaAcres": 65,
+      "crops": [
+        "Robusta Cavendish Bananas",
+        "Totapuri Mangoes"
+      ],
+      "certifications": [
+        "GlobalGAP Certified",
+        "Rainforest Alliance"
+      ],
+      "soilHealthScore": "92/100 (Rich Red Loamy)"
+    },
+    {
+      "id": "FARM-AP-103",
+      "name": "Godavari Greens Organics",
+      "owner": "Venkat Rao",
+      "region": "Eluru, West Godavari District, Andhra Pradesh",
+      "coordinates": "16.7107\u00b0 N, 81.0952\u00b0 E",
+      "areaAcres": 38,
+      "crops": [
+        "Taiwan Pink Guavas",
+        "Papaya"
+      ],
+      "certifications": [
+        "Jaivik Bharat PGS-India",
+        "AP AgTech Trust Certified"
+      ],
+      "soilHealthScore": "88/100 (Alluvial Delta Soil)"
+    },
+    {
+      "id": "FARM-AP-104",
+      "name": "Tungabhadra Agro Collective",
+      "owner": "Siva Kumar Reddy",
+      "region": "Adoni, Kurnool District, Andhra Pradesh",
+      "coordinates": "15.6322\u00b0 N, 77.2750\u00b0 E",
+      "areaAcres": 50,
+      "crops": [
+        "Organic Palak (Spinach)",
+        "Methi (Fenugreek)"
+      ],
+      "certifications": [
+        "Under Audit Renewal (Exp. 2026-09)"
+      ],
+      "soilHealthScore": "78/100 (Semi-Arid Black Cotton)"
+    },
+    {
+      "id": "FARM-AP-105",
+      "name": "Krishna Valley Farms",
+      "owner": "Anji Babu",
+      "region": "Nuzvid / Vijayawada Rural, Krishna District, AP",
+      "coordinates": "16.7850\u00b0 N, 80.8466\u00b0 E",
+      "areaAcres": 80,
+      "crops": [
+        "Banganapalle Mangoes (GI Tagged)",
+        "Sweet Lime"
+      ],
+      "certifications": [
+        "GI Tag Holder #AP-MNG-402",
+        "IndGAP"
+      ],
+      "soilHealthScore": "94/100 (Sandy Loam)"
+    }
+  ],
+  "batches": [
+    {
+      "id": "TH-TOM-2026-081",
+      "crop": "Roma Tomatoes",
+      "variety": "Hybrid S-22 Premium",
+      "farmId": "FARM-AP-101",
+      "farmName": "Sri Krishna Agri Farms",
+      "region": "Tenali, Guntur, AP",
+      "harvestDate": "2026-10-18T06:30:00",
+      "quantityKg": 2400,
+      "currentQuantityKg": 2400,
+      "status": "In Transit / Retail",
+      "recallStatus": "CLEAR",
+      "riskLevel": "Low",
+      "dataCompleteness": 100,
+      "qrPayload": "https://traceharvest.ai/verify/TH-TOM-2026-081",
+      "currentHolder": "Rythu Bazaar Superstore, Vijayawada",
+      "notes": "Grade A harvest, washed with ozone water treatment, crates RFID tagged.",
+      "timelineEvents": [
+        {
+          "id": "EV-081-1",
+          "type": "HARVEST",
+          "timestamp": "2026-10-18T06:30:00",
+          "actor": "Ramesh Naidu (Farmer)",
+          "location": "Sri Krishna Agri Farms, Tenali, Guntur",
+          "details": "Harvested 2400 kg at 24\u00b0C ambient morning temperature.",
+          "verified": true
+        },
+        {
+          "id": "EV-081-2",
+          "type": "INSPECTION",
+          "timestamp": "2026-10-18T09:15:00",
+          "actor": "Guntur Agri Quality Lab",
+          "location": "Tenali Farm Collection Centre",
+          "details": "PASSED: Grade A, Brix 5.2, Pesticide Residue: Below Detectable Limits (ND).",
+          "verified": true,
+          "docRef": "LAB-GT-2026-8812"
+        },
+        {
+          "id": "EV-081-3",
+          "type": "TRANSFER_DISPATCH",
+          "timestamp": "2026-10-18T11:00:00",
+          "actor": "FastTrack ColdTrans AP",
+          "location": "Tenali -> Guntur Central Cold Hub",
+          "details": "Dispatched 2400 kg via Reefer Van AP-07-TJ-4421 at 8.0\u00b0C setpoint.",
+          "verified": true
+        },
+        {
+          "id": "EV-081-4",
+          "type": "TRANSFER_RECEIPT",
+          "timestamp": "2026-10-18T13:40:00",
+          "actor": "S. K. Verma (Guntur Central Hub)",
+          "location": "Guntur Central Cold Hub",
+          "details": "Received 2400 kg in Cold Room #3 at 7.5\u00b0C, 90% RH.",
+          "verified": true
+        },
+        {
+          "id": "EV-081-5",
+          "type": "TRANSFER_DISPATCH",
+          "timestamp": "2026-10-19T07:00:00",
+          "actor": "FastTrack ColdTrans AP",
+          "location": "Guntur Hub -> Rythu Bazaar Vijayawada",
+          "details": "Dispatched 2400 kg for morning retail distribution.",
+          "verified": true
+        },
+        {
+          "id": "EV-081-6",
+          "type": "RETAIL_RECEIPT",
+          "timestamp": "2026-10-19T09:20:00",
+          "actor": "Priya Rao (Rythu Bazaar)",
+          "location": "Benz Circle, Vijayawada",
+          "details": "Received on retail floor. Scannable consumer QR enabled.",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "id": "TH-MNG-2026-042",
+      "crop": "Banganapalle Mangoes",
+      "variety": "GI Tagged Andhra Gold",
+      "farmId": "FARM-AP-105",
+      "farmName": "Krishna Valley Farms",
+      "region": "Nuzvid, Krishna, AP",
+      "harvestDate": "2026-10-19T08:00:00",
+      "quantityKg": 1800,
+      "currentQuantityKg": 1800,
+      "status": "At Distribution Hub",
+      "recallStatus": "CLEAR",
+      "riskLevel": "Medium",
+      "dataCompleteness": 72,
+      "qrPayload": "https://traceharvest.ai/verify/TH-MNG-2026-042",
+      "currentHolder": "Rayalaseema Agro Depot, Tirupati",
+      "notes": "GI Tag batch. Pre-shipment laboratory quality certificate is MISSING from record.",
+      "timelineEvents": [
+        {
+          "id": "EV-042-1",
+          "type": "HARVEST",
+          "timestamp": "2026-10-19T08:00:00",
+          "actor": "Anji Babu (Farmer)",
+          "location": "Krishna Valley Farms, Nuzvid",
+          "details": "Harvested 1800 kg export quality GI mangoes.",
+          "verified": true
+        },
+        {
+          "id": "EV-042-2",
+          "type": "TRANSFER_DISPATCH",
+          "timestamp": "2026-10-19T14:30:00",
+          "actor": "Coastal Agri Haulers",
+          "location": "Nuzvid -> Rayalaseema Agro Depot",
+          "details": "Dispatched 1800 kg without attaching mandatory pre-dispatch lab test.",
+          "verified": false
+        },
+        {
+          "id": "EV-042-3",
+          "type": "TRANSFER_RECEIPT",
+          "timestamp": "2026-10-20T04:10:00",
+          "actor": "Depot Supervisor (Tirupati)",
+          "location": "Rayalaseema Agro Depot, Tirupati",
+          "details": "Received 1800 kg into Ripening Chamber 2.",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "id": "TH-PLK-2026-019",
+      "crop": "Organic Palak (Spinach)",
+      "variety": "Broadleaf Green",
+      "farmId": "FARM-AP-104",
+      "farmName": "Tungabhadra Agro Collective",
+      "region": "Adoni, Kurnool, AP",
+      "harvestDate": "2026-10-20T05:00:00",
+      "quantityKg": 1200,
+      "currentQuantityKg": 1200,
+      "status": "RECALLED - QUARANTINED",
+      "recallStatus": "RECALLED",
+      "riskLevel": "Critical",
+      "dataCompleteness": 88,
+      "qrPayload": "https://traceharvest.ai/verify/TH-PLK-2026-019",
+      "currentHolder": "Multiple Downstream Quarantined Points",
+      "notes": "URGENT FSSAI RECALL: Contamination flagged by Regional Food Safety Testing Lab.",
+      "timelineEvents": [
+        {
+          "id": "EV-019-1",
+          "type": "HARVEST",
+          "timestamp": "2026-10-20T05:00:00",
+          "actor": "Siva Kumar Reddy (Farmer)",
+          "location": "Tungabhadra Agro Collective, Adoni",
+          "details": "Harvested 1200 kg certified organic leafy greens.",
+          "verified": true
+        },
+        {
+          "id": "EV-019-2",
+          "type": "TRANSFER_DISPATCH",
+          "timestamp": "2026-10-20T08:00:00",
+          "actor": "Deccan Express Logistics",
+          "location": "Adoni -> Guntur Central Cold Hub",
+          "details": "Dispatched 1200 kg palletized greens.",
+          "verified": true
+        },
+        {
+          "id": "EV-019-3",
+          "type": "TRANSFER_RECEIPT",
+          "timestamp": "2026-10-20T16:30:00",
+          "actor": "S. K. Verma",
+          "location": "Guntur Central Cold Hub",
+          "details": "Received 1200 kg in sorting line.",
+          "verified": true
+        },
+        {
+          "id": "EV-019-4",
+          "type": "INSPECTION_FAILED",
+          "timestamp": "2026-10-22T10:00:00",
+          "actor": "AP Food Safety Analytical Lab",
+          "location": "Guntur Testing Lab",
+          "details": "CRITICAL FAILURE: Organophosphate pesticide residue detected at 0.42 mg/kg (MRL 0.05 mg/kg).",
+          "verified": true,
+          "docRef": "FSSAI-AP-RECALL-901"
+        },
+        {
+          "id": "EV-019-5",
+          "type": "RECALL_ISSUED",
+          "timestamp": "2026-10-22T11:30:00",
+          "actor": "Dr. Aruna Reddy (Food Safety Admin)",
+          "location": "Mangalagiri HQ",
+          "details": "Level 1 Mandatory Recall enacted. All movement locked. 4 downstream points notified.",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "id": "TH-CHI-2026-067",
+      "crop": "Guntur Sannam Chillies",
+      "variety": "S4 Hot Red Special",
+      "farmId": "FARM-AP-101",
+      "farmName": "Sri Krishna Agri Farms",
+      "region": "Tenali, Guntur, AP",
+      "harvestDate": "2026-10-21T14:00:00",
+      "quantityKg": 3500,
+      "currentQuantityKg": 3500,
+      "status": "Flagged - Audit Review",
+      "recallStatus": "CLEAR",
+      "riskLevel": "High",
+      "dataCompleteness": 65,
+      "qrPayload": "https://traceharvest.ai/verify/TH-CHI-2026-067",
+      "currentHolder": "Guntur Central Cold Hub",
+      "notes": "TEMPORAL INCONSISTENCY: Transfer dispatch recorded at 09:30 AM before recorded harvest at 02:00 PM.",
+      "timelineEvents": [
+        {
+          "id": "EV-067-1",
+          "type": "TRANSFER_DISPATCH",
+          "timestamp": "2026-10-21T09:30:00",
+          "actor": "FastTrack ColdTrans AP",
+          "location": "Tenali -> Guntur Hub",
+          "details": "Dispatched 3500 kg chillies. Timestamp precedes recorded harvest!",
+          "verified": false
+        },
+        {
+          "id": "EV-067-2",
+          "type": "HARVEST",
+          "timestamp": "2026-10-21T14:00:00",
+          "actor": "Ramesh Naidu",
+          "location": "Tenali Farm Plot 4",
+          "details": "Logged harvest completion for 3500 kg chillies.",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "id": "TH-BNN-2026-112",
+      "crop": "Robusta Cavendish Bananas",
+      "variety": "Export Grade Grand Naine",
+      "farmId": "FARM-AP-102",
+      "farmName": "Rayalaseema Orchards",
+      "region": "Chittoor, AP",
+      "harvestDate": "2026-10-17T07:00:00",
+      "quantityKg": 5000,
+      "currentQuantityKg": 5450,
+      "status": "Flagged - Discrepancy",
+      "recallStatus": "CLEAR",
+      "riskLevel": "High",
+      "dataCompleteness": 80,
+      "qrPayload": "https://traceharvest.ai/verify/TH-BNN-2026-112",
+      "currentHolder": "Rayalaseema Agro Depot",
+      "notes": "QUANTITY INFLATION: Dispatched 5000 kg, but receiver logged 5450 kg (+450 kg phantom weight).",
+      "timelineEvents": [
+        {
+          "id": "EV-112-1",
+          "type": "HARVEST",
+          "timestamp": "2026-10-17T07:00:00",
+          "actor": "Lakshmi Devi",
+          "location": "Chittoor Orchards",
+          "details": "Harvested 5000 kg bananas.",
+          "verified": true
+        },
+        {
+          "id": "EV-112-2",
+          "type": "TRANSFER_DISPATCH",
+          "timestamp": "2026-10-17T11:00:00",
+          "actor": "Coastal Agri Haulers",
+          "location": "Chittoor -> Tirupati Depot",
+          "details": "Dispatched 5000 kg under Consignment Note AP-CH-991.",
+          "verified": true
+        },
+        {
+          "id": "EV-112-3",
+          "type": "TRANSFER_RECEIPT",
+          "timestamp": "2026-10-17T17:30:00",
+          "actor": "Weighbridge Operator (Tirupati)",
+          "location": "Rayalaseema Agro Depot",
+          "details": "Recorded inbound weighment of 5450 kg (+9% unexplained surplus).",
+          "verified": false
+        }
+      ]
+    },
+    {
+      "id": "TH-GVA-2026-095",
+      "crop": "Taiwan Pink Guavas",
+      "variety": "Crisp Sweet Selection",
+      "farmId": "FARM-AP-103",
+      "farmName": "Godavari Greens Organics",
+      "region": "Eluru, West Godavari, AP",
+      "harvestDate": "2026-10-21T06:00:00",
+      "quantityKg": 1600,
+      "currentQuantityKg": 1600,
+      "status": "Cold Chain Excursion",
+      "recallStatus": "CLEAR",
+      "riskLevel": "Critical",
+      "dataCompleteness": 95,
+      "qrPayload": "https://traceharvest.ai/verify/TH-GVA-2026-095",
+      "currentHolder": "Vijayawada Mega Agripark",
+      "notes": "COLD CHAIN ALERT: Temperature sensor logged 18.5\u00b0C for 4.2 hours during transit on NH-16 (Upper limit 8\u00b0C).",
+      "timelineEvents": [
+        {
+          "id": "EV-095-1",
+          "type": "HARVEST",
+          "timestamp": "2026-10-21T06:00:00",
+          "actor": "Venkat Rao",
+          "location": "Godavari Greens, Eluru",
+          "details": "Harvested 1600 kg fresh pink guavas at 22\u00b0C.",
+          "verified": true
+        },
+        {
+          "id": "EV-095-2",
+          "type": "INSPECTION",
+          "timestamp": "2026-10-21T08:00:00",
+          "actor": "Eluru Agri Field Chemist",
+          "location": "Eluru Packing Centre",
+          "details": "PASSED: Total Soluble Solids 10.4%, Firmness 7.8 kg/cm2, Zero fruit fly infestation.",
+          "verified": true,
+          "docRef": "EL-Q-2026-441"
+        },
+        {
+          "id": "EV-095-3",
+          "type": "TRANSFER_DISPATCH",
+          "timestamp": "2026-10-21T09:45:00",
+          "actor": "FastTrack ColdTrans AP",
+          "location": "Eluru -> Vijayawada Agripark",
+          "details": "Loaded into Reefer AP-07-TJ-4421. Sensor IoT-TMP-409 attached.",
+          "verified": true
+        },
+        {
+          "id": "EV-095-4",
+          "type": "COLD_CHAIN_EXCURSION",
+          "timestamp": "2026-10-21T12:15:00",
+          "actor": "IoT Automated Telemetry",
+          "location": "NH-16 Corridor (Between Hanuman Junction & Vijayawada)",
+          "details": "Reefer compressor failure. Cabin temp spiked to 18.5\u00b0C for 4 hrs 12 mins.",
+          "verified": true,
+          "docRef": "IOT-EXC-2026-095"
+        },
+        {
+          "id": "EV-095-5",
+          "type": "TRANSFER_RECEIPT",
+          "timestamp": "2026-10-21T16:00:00",
+          "actor": "Vijayawada Mega Agripark Receiving",
+          "location": "Vijayawada Agripark Cold Bay 4",
+          "details": "Received 1600 kg. Excursion alert flagged on intake scan.",
+          "verified": true
+        }
+      ]
+    }
+  ],
+  "transfers": [
+    {
+      "id": "TR-2026-501",
+      "batchId": "TH-TOM-2026-081",
+      "fromLocation": "Sri Krishna Agri Farms, Tenali",
+      "toLocation": "Guntur Central Cold Hub",
+      "dispatchedQuantityKg": 2400,
+      "receivedQuantityKg": 2400,
+      "transporter": "FastTrack ColdTrans AP",
+      "vehicleNo": "AP-07-TJ-4421",
+      "dispatchTime": "2026-10-18T11:00:00",
+      "receivedTime": "2026-10-18T13:40:00",
+      "status": "Completed",
+      "condition": "Temperature controlled 8.0\u00b0C",
+      "notes": "Delivered on schedule with intact tamper seals."
+    },
+    {
+      "id": "TR-2026-502",
+      "batchId": "TH-TOM-2026-081",
+      "fromLocation": "Guntur Central Cold Hub",
+      "toLocation": "Rythu Bazaar Superstore, Benz Circle",
+      "dispatchedQuantityKg": 2400,
+      "receivedQuantityKg": 2400,
+      "transporter": "FastTrack ColdTrans AP",
+      "vehicleNo": "AP-07-TJ-4421",
+      "dispatchTime": "2026-10-19T07:00:00",
+      "receivedTime": "2026-10-19T09:20:00",
+      "status": "Completed",
+      "condition": "Chilled 7.5\u00b0C",
+      "notes": "Final retail delivery."
+    },
+    {
+      "id": "TR-2026-503",
+      "batchId": "TH-PLK-2026-019",
+      "fromLocation": "Tungabhadra Agro Collective, Adoni",
+      "toLocation": "Guntur Central Cold Hub",
+      "dispatchedQuantityKg": 1200,
+      "receivedQuantityKg": 1200,
+      "transporter": "Deccan Express Logistics",
+      "vehicleNo": "AP-21-TX-9910",
+      "dispatchTime": "2026-10-20T08:00:00",
+      "receivedTime": "2026-10-20T16:30:00",
+      "status": "Recalled in Storage",
+      "condition": "Insulated Crates",
+      "notes": "Batch quarantined at hub after subsequent pesticide lab failure."
+    },
+    {
+      "id": "TR-2026-504",
+      "batchId": "TH-PLK-2026-019",
+      "fromLocation": "Guntur Central Cold Hub",
+      "toLocation": "Rythu Bazaar Superstore, Vijayawada",
+      "dispatchedQuantityKg": 700,
+      "receivedQuantityKg": 700,
+      "transporter": "FastTrack ColdTrans AP",
+      "vehicleNo": "AP-07-TJ-4421",
+      "dispatchTime": "2026-10-21T06:00:00",
+      "receivedTime": "2026-10-21T08:15:00",
+      "status": "Quarantined at Retail",
+      "condition": "Transit chilled",
+      "notes": "Recalled stock isolated on store shelves."
+    },
+    {
+      "id": "TR-2026-505",
+      "batchId": "TH-PLK-2026-019",
+      "fromLocation": "Guntur Central Cold Hub",
+      "toLocation": "Nature's Basket AP, Visakhapatnam",
+      "dispatchedQuantityKg": 500,
+      "receivedQuantityKg": 500,
+      "transporter": "Coastal Agri Haulers",
+      "vehicleNo": "AP-03-X-8822",
+      "dispatchTime": "2026-10-21T08:00:00",
+      "receivedTime": "2026-10-21T18:30:00",
+      "status": "Quarantined at Retail",
+      "condition": "Dry freight",
+      "notes": "Secondary downstream branch isolated."
+    },
+    {
+      "id": "TR-2026-506",
+      "batchId": "TH-GVA-2026-095",
+      "fromLocation": "Godavari Greens Organics, Eluru",
+      "toLocation": "Vijayawada Mega Agripark",
+      "dispatchedQuantityKg": 1600,
+      "receivedQuantityKg": 1600,
+      "transporter": "FastTrack ColdTrans AP",
+      "vehicleNo": "AP-07-TJ-4421",
+      "dispatchTime": "2026-10-21T09:45:00",
+      "receivedTime": "2026-10-21T16:00:00",
+      "status": "Investigation Hold",
+      "condition": "Excursion to 18.5\u00b0C logged",
+      "notes": "Corridor NH-16 mechanical malfunction."
+    }
+  ],
+  "inspections": [
+    {
+      "id": "INSP-8812",
+      "batchId": "TH-TOM-2026-081",
+      "crop": "Roma Tomatoes",
+      "inspector": "Guntur Agri Quality Lab",
+      "date": "2026-10-18T09:15:00",
+      "status": "PASSED",
+      "parameters": {
+        "brix": "5.2 (Std: 4.8-5.5)",
+        "firmness": "8.5 kg/cm\u00b2",
+        "pesticideResidue": "ND (<0.01 mg/kg)",
+        "ecoliColiform": "Zero CFU/g"
+      },
+      "docReference": "LAB-GT-2026-8812",
+      "verdict": "Certified Grade A for commercial retail."
+    },
+    {
+      "id": "INSP-901",
+      "batchId": "TH-PLK-2026-019",
+      "crop": "Organic Palak (Spinach)",
+      "inspector": "AP Food Safety Analytical Lab",
+      "date": "2026-10-22T10:00:00",
+      "status": "FAILED",
+      "parameters": {
+        "chlorpyrifos": "0.42 mg/kg (MRL: 0.05 mg/kg) [VIOLATION]",
+        "leadHeavyMetal": "0.08 mg/kg (Compliant)",
+        "salmonella": "Negative"
+      },
+      "docReference": "FSSAI-AP-RECALL-901",
+      "verdict": "NON-COMPLIANT: Organophosphate pesticide residue 8.4x over legal safety limit."
+    },
+    {
+      "id": "INSP-441",
+      "batchId": "TH-GVA-2026-095",
+      "crop": "Taiwan Pink Guavas",
+      "inspector": "Eluru Agri Field Chemist",
+      "date": "2026-10-21T08:00:00",
+      "status": "PASSED",
+      "parameters": {
+        "brix": "10.4",
+        "firmness": "7.8 kg/cm\u00b2",
+        "pestInfestation": "None"
+      },
+      "docReference": "EL-Q-2026-441",
+      "verdict": "Approved pre-cooling intake."
+    }
+  ],
+  "coldChainLogs": [
+    {
+      "timestamp": "2026-10-21T09:45:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "NH-16 Eluru - Vijayawada",
+      "tempC": 5.2,
+      "humidityPct": 88,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Normal"
+    },
+    {
+      "timestamp": "2026-10-21T10:30:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "NH-16 Eluru - Vijayawada",
+      "tempC": 6.8,
+      "humidityPct": 87,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Normal"
+    },
+    {
+      "timestamp": "2026-10-21T11:15:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "NH-16 Near Hanuman Junction",
+      "tempC": 11.4,
+      "humidityPct": 82,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Excursion Warning"
+    },
+    {
+      "timestamp": "2026-10-21T12:00:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "NH-16 Near Hanuman Junction",
+      "tempC": 16.2,
+      "humidityPct": 76,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Critical Excursion"
+    },
+    {
+      "timestamp": "2026-10-21T13:30:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "NH-16 Toll Gate Bypass",
+      "tempC": 18.5,
+      "humidityPct": 71,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Critical Excursion"
+    },
+    {
+      "timestamp": "2026-10-21T14:45:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "NH-16 Vijayawada Outer",
+      "tempC": 17.8,
+      "humidityPct": 74,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Critical Excursion"
+    },
+    {
+      "timestamp": "2026-10-21T15:30:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "Vijayawada Mega Agripark Intake",
+      "tempC": 12.0,
+      "humidityPct": 80,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Excursion Recovery"
+    },
+    {
+      "timestamp": "2026-10-21T16:00:00",
+      "batchId": "TH-GVA-2026-095",
+      "route": "Vijayawada Cold Bay 4",
+      "tempC": 6.0,
+      "humidityPct": 89,
+      "vehicleNo": "AP-07-TJ-4421",
+      "status": "Normal"
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "ANOM-2026-01",
+      "batchId": "TH-PLK-2026-019",
+      "title": "Severe MRL Chemical Contamination Detected",
+      "severity": "Critical",
+      "crop": "Organic Palak (Spinach)",
+      "category": "Quality Failure",
+      "location": "Guntur Testing Lab",
+      "detectedAt": "2026-10-22T10:00:00",
+      "reason": "Chlorpyrifos pesticide level 0.42 mg/kg violates FSSAI maximum limit of 0.05 mg/kg by 840%.",
+      "evidence": "Lab Report #FSSAI-AP-RECALL-901 confirmed by Gas Chromatography (GC-MS/MS).",
+      "recommendedAction": "Initiate emergency recall; quarantine all stock at Guntur hub and downstream retail branches.",
+      "humanReviewRequired": true,
+      "status": "Under Active Recall"
+    },
+    {
+      "id": "ANOM-2026-02",
+      "batchId": "TH-GVA-2026-095",
+      "title": "Extended Cold-Chain Thermal Excursion (>4 Hours)",
+      "severity": "Critical",
+      "crop": "Taiwan Pink Guavas",
+      "category": "Cold-Chain Anomaly",
+      "location": "NH-16 Corridor (Eluru -> Vijayawada)",
+      "detectedAt": "2026-10-21T12:15:00",
+      "reason": "Refrigeration compartment breached 8\u00b0C upper ceiling for 4.2 continuous hours, peaking at 18.5\u00b0C.",
+      "evidence": "IoT Sensor #IoT-TMP-409 streaming telemetry log showing compressor stoppage.",
+      "recommendedAction": "Hold batch at intake for microbial and firmness assay. Service vehicle reefer unit AP-07-TJ-4421.",
+      "humanReviewRequired": true,
+      "status": "Pending Investigation"
+    },
+    {
+      "id": "ANOM-2026-03",
+      "batchId": "TH-CHI-2026-067",
+      "title": "Temporal Inversion (Dispatch Prior to Harvest)",
+      "severity": "High",
+      "crop": "Guntur Sannam Chillies",
+      "category": "Timestamp Paradox",
+      "location": "Tenali Farm Collection Centre",
+      "detectedAt": "2026-10-21T14:05:00",
+      "reason": "Transfer dispatch logged at 09:30 AM while farm harvest timestamp is 02:00 PM on the same date.",
+      "evidence": "Audit logs: EV-067-1 (09:30) vs EV-067-2 (14:00). Digital signature mismatch.",
+      "recommendedAction": "Request farmer and driver sign-off reconciliation. Check device clocks.",
+      "humanReviewRequired": true,
+      "status": "Unresolved Audit"
+    },
+    {
+      "id": "ANOM-2026-04",
+      "batchId": "TH-BNN-2026-112",
+      "title": "Unexplained Quantity Inflation (+450 kg)",
+      "severity": "High",
+      "crop": "Robusta Cavendish Bananas",
+      "category": "Quantity Mismatch",
+      "location": "Rayalaseema Agro Depot Weighbridge",
+      "detectedAt": "2026-10-17T17:35:00",
+      "reason": "Received weight (5450 kg) exceeds dispatched bill of lading weight (5000 kg) by 9%.",
+      "evidence": "Consignment Note AP-CH-991 vs Intake Scale Slip #WB-881.",
+      "recommendedAction": "Inspect weighbridge calibration and check for commingling of unverified third-party fruit.",
+      "humanReviewRequired": true,
+      "status": "Unresolved Audit"
+    },
+    {
+      "id": "ANOM-2026-05",
+      "batchId": "TH-MNG-2026-042",
+      "title": "Missing Mandatory Quality Inspection Record",
+      "severity": "Medium",
+      "crop": "Banganapalle Mangoes",
+      "category": "Compliance Gap",
+      "location": "Nuzvid Farm Gate",
+      "detectedAt": "2026-10-19T15:00:00",
+      "reason": "GI-tagged export mango batch was dispatched across district lines without attaching pre-cooling lab test.",
+      "evidence": "Missing required document attachment in transfer payload TR-2026-440.",
+      "recommendedAction": "Submit retrospective inspection certificate or quarantine at Tirupati depot.",
+      "humanReviewRequired": true,
+      "status": "Open Warning"
+    }
+  ],
+  "recalls": [
+    {
+      "id": "REC-2026-001",
+      "batchId": "TH-PLK-2026-019",
+      "crop": "Organic Palak (Spinach)",
+      "initiatedBy": "Dr. Aruna Reddy (Food Safety Admin)",
+      "initiatedAt": "2026-10-22T11:30:00",
+      "hazardType": "Chemical Contamination (Chlorpyrifos 0.42 mg/kg)",
+      "severity": "Level 1 (Life-Threatening / Acute Toxicity)",
+      "status": "Active Quarantine",
+      "totalAffectedKg": 1200,
+      "quarantinedKg": 1200,
+      "affectedDestinations": [
+        {
+          "stakeholder": "Rythu Bazaar Superstore",
+          "type": "Retailer",
+          "location": "Benz Circle, Vijayawada",
+          "recordedQtyKg": 700,
+          "status": "Acknowledged & Quarantined",
+          "acknowledgedBy": "Priya Rao (Store Manager)",
+          "acknowledgedAt": "2026-10-22T12:05:00",
+          "correctiveAction": "Isolated 700 kg from cold display to HazMat disposal crate."
+        },
+        {
+          "stakeholder": "Nature's Basket AP",
+          "type": "Retailer",
+          "location": "Waltair Uplands, Visakhapatnam",
+          "recordedQtyKg": 500,
+          "status": "Pending Acknowledgement",
+          "acknowledgedBy": null,
+          "acknowledgedAt": null,
+          "correctiveAction": "Priority phone notice dispatched; waiting for supervisor signature."
+        },
+        {
+          "stakeholder": "Guntur Central Cold Hub",
+          "type": "Transit Hub",
+          "location": "Industrial Corridor, Guntur",
+          "recordedQtyKg": 1200,
+          "status": "Acknowledged & Quarantined",
+          "acknowledgedBy": "S. K. Verma (Hub Director)",
+          "acknowledgedAt": "2026-10-22T11:45:00",
+          "correctiveAction": "Quarantine tape applied to Bay 3 sorting area."
+        },
+        {
+          "stakeholder": "Deccan Express Logistics",
+          "type": "Transporter",
+          "location": "Kurnool Fleet Depot",
+          "recordedQtyKg": 1200,
+          "status": "Acknowledged & Cleared",
+          "acknowledgedBy": "Fleet Dispatcher",
+          "acknowledgedAt": "2026-10-22T12:10:00",
+          "correctiveAction": "Truck AP-21-TX-9910 disinfected and sanitized."
+        }
+      ],
+      "timeline": [
+        {
+          "stage": "Laboratory Flag",
+          "time": "2026-10-22T10:00:00",
+          "status": "Completed"
+        },
+        {
+          "stage": "Recall Enactment",
+          "time": "2026-10-22T11:30:00",
+          "status": "Completed"
+        },
+        {
+          "stage": "Downstream Broadcast",
+          "time": "2026-10-22T11:35:00",
+          "status": "Completed"
+        },
+        {
+          "stage": "Retail Stock Isolation",
+          "time": "2026-10-22T12:30:00",
+          "status": "In Progress"
+        },
+        {
+          "stage": "Safe Destruction & Audit",
+          "time": "2026-10-23T15:00:00",
+          "status": "Pending"
+        }
+      ]
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "AUD-001",
+      "timestamp": "2026-10-22T11:30:00",
+      "actor": "Dr. Aruna Reddy (Food Safety Admin)",
+      "action": "INITIATE_RECALL",
+      "target": "TH-PLK-2026-019",
+      "details": "Level 1 Recall initiated for spinach batch due to chlorpyrifos 0.42 mg/kg. Transfer block enabled."
+    },
+    {
+      "id": "AUD-002",
+      "timestamp": "2026-10-22T12:05:00",
+      "actor": "Priya Rao (Retailer)",
+      "action": "ACKNOWLEDGE_RECALL",
+      "target": "REC-2026-001 / Rythu Bazaar",
+      "details": "Acknowledged quarantine of 700 kg batch stock."
+    }
+  ]
+}

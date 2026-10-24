@@ -78,7 +78,7 @@
         mainArea.innerHTML = `
           <section role="alert" class="max-w-xl mx-auto my-12 p-8 rounded-2xl border border-rose-500/30 bg-slate-900 text-slate-200">
             <h2 class="text-xl font-semibold text-white mb-3">Network data is unavailable</h2>
-            <p class="text-sm text-slate-400 mb-6">TraceHarvest could not connect to its data service. Check your connection and try again. If this continues, the site administrator needs to connect a publicly hosted backend.</p>
+            <p class="text-sm text-slate-400 mb-6">TraceHarvest could not connect to its data service. Please try again in a moment. If this continues, the site administrator needs to check the data service.</p>
             <button type="button" id="retry-network-data" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-400">Retry connection</button>
           </section>`;
         document.getElementById('retry-network-data').addEventListener('click', async (event) => {

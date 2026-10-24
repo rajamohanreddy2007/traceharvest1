@@ -1,0 +1,104 @@
+{
+  "patterns": [
+    {
+      "id": "PAT-001",
+      "title": "Recurring Cold-Chain Excursions on NH-16 Coastal Corridor",
+      "severity": "Critical",
+      "dateRange": "2026-10-18 to 2026-10-24",
+      "supportingRecordsCount": 6,
+      "affectedBatches": [
+        "TH-GVA-2026-095"
+      ],
+      "route": "NH-16 Eluru - Hanuman Junction - Vijayawada",
+      "evidence": "4.2 hour continuous compressor thermal failure logged on Reefer AP-07-TJ-4421, reaching 18.5\u00b0C.",
+      "recommendedInvestigation": "Audit FastTrack ColdTrans fleet maintenance records and evaluate refrigeration backup alternators.",
+      "targetBatchId": "TH-GVA-2026-095"
+    },
+    {
+      "id": "PAT-002",
+      "title": "Severe Organophosphate Chemical Residue in Kurnool Leafy Greens",
+      "severity": "Critical",
+      "dateRange": "2026-10-20 to 2026-10-22",
+      "supportingRecordsCount": 5,
+      "affectedBatches": [
+        "TH-PLK-2026-019"
+      ],
+      "route": "Adoni -> Guntur Central Cold Hub -> Retailers",
+      "evidence": "Chlorpyrifos detected at 0.42 mg/kg (MRL 0.05 mg/kg). Downstream distribution spans 2 supermarkets.",
+      "recommendedInvestigation": "Examine agrochemical sprayer calibration and verify organic certification compliance at Tungabhadra Collective.",
+      "targetBatchId": "TH-PLK-2026-019"
+    },
+    {
+      "id": "PAT-003",
+      "title": "Weighbridge Inbound Quantity Inflation (+9%) at Chittoor Depot",
+      "severity": "High",
+      "dateRange": "2026-10-17 to 2026-10-21",
+      "supportingRecordsCount": 3,
+      "affectedBatches": [
+        "TH-BNN-2026-112"
+      ],
+      "route": "Chittoor Orchards -> Rayalaseema Agro Depot",
+      "evidence": "Dispatched weight was 5000 kg, but intake weighbridge recorded 5450 kg without supporting documentation.",
+      "recommendedInvestigation": "Inspect load cell calibration on Depot Scale #2 and cross-check driver bill of lading.",
+      "targetBatchId": "TH-BNN-2026-112"
+    },
+    {
+      "id": "PAT-004",
+      "title": "Dispatch Timestamp Inversions at Tenali Farm Gate",
+      "severity": "High",
+      "dateRange": "2026-10-21",
+      "supportingRecordsCount": 2,
+      "affectedBatches": [
+        "TH-CHI-2026-067"
+      ],
+      "route": "Tenali Collection Centre -> Guntur Cold Hub",
+      "evidence": "Transfer dispatch logged 4.5 hours prior to recorded farm harvest time.",
+      "recommendedInvestigation": "Check farm mobile device NTP clock synchronization and investigate pre-booking transfer practices.",
+      "targetBatchId": "TH-CHI-2026-067"
+    }
+  ],
+  "historicalTimeline": [
+    {
+      "date": "2026-10-18",
+      "incidents": 0,
+      "normalBatches": 3,
+      "avgTemp": 7.4
+    },
+    {
+      "date": "2026-10-19",
+      "incidents": 1,
+      "normalBatches": 2,
+      "avgTemp": 7.8
+    },
+    {
+      "date": "2026-10-20",
+      "incidents": 2,
+      "normalBatches": 2,
+      "avgTemp": 8.1
+    },
+    {
+      "date": "2026-10-21",
+      "incidents": 4,
+      "normalBatches": 3,
+      "avgTemp": 14.5
+    },
+    {
+      "date": "2026-10-22",
+      "incidents": 3,
+      "normalBatches": 2,
+      "avgTemp": 8.0
+    },
+    {
+      "date": "2026-10-23",
+      "incidents": 2,
+      "normalBatches": 4,
+      "avgTemp": 7.6
+    },
+    {
+      "date": "2026-10-24",
+      "incidents": 1,
+      "normalBatches": 4,
+      "avgTemp": 7.2
+    }
+  ]
+}
