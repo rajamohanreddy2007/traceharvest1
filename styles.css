@@ -1,0 +1,145 @@
+/* TraceHarvest AI - Enterprise Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --color-primary-dark: #064e3b;
+  --color-primary-mid: #047857;
+  --color-primary-light: #10b981;
+  --color-mint-subtle: #d1fae5;
+  --color-bg-light: #f8fafc;
+  --color-midnight: #070a13;
+  --color-midnight-card: #0d131f;
+  --color-cyan-glow: #00e5ff;
+  --color-green-glow: #00ffb2;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+code, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.7);
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card-dark {
+  background: rgba(13, 19, 31, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+/* Glow effects for Bull's-Eye Dark Cinematic Mode */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px rgba(0, 255, 178, 0.25);
+}
+
+.glow-red {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
+}
+
+/* Radar pulse animation */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.radar-pulse-anim {
+  animation: radar-pulse 3s infinite ease-in-out;
+}
+
+/* Concentric ring pulse */
+@keyframes ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: ring-spin 40s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: ring-spin 50s linear infinite reverse;
+}
+
+/* Badge pulse */
+@keyframes urgent-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.blink-urgent {
+  animation: urgent-blink 1.2s infinite;
+}
+
+/* Journey Replay timeline animations */
+.timeline-step-active {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: white;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Print styles for downloadable / printable incident reports */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-incident-modal, #printable-incident-modal * {
+    visibility: visible;
+  }
+  #printable-incident-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

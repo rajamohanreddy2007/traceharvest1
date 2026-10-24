@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TraceHarvest AI — The Intelligent Trust Network for Food</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              900: '#022c22',
+              800: '#064e3b',
+              700: '#047857',
+              600: '#059669',
+              500: '#10b981',
+              100: '#d1fae5',
+              50: '#ecfdf5'
+            },
+            midnight: {
+              950: '#040711',
+              900: '#070a13',
+              850: '#0b101c',
+              800: '#0d131f',
+              700: '#151e30',
+              600: '#1e293b'
+            },
+            neon: {
+              green: '#00ffb2',
+              cyan: '#00e5ff',
+              amber: '#f59e0b',
+              red: '#ef4444'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+  <!-- Guided Demonstration Banner (Sticky) -->
+  <div id="demo-guide-bar" class="bg-gradient-to-r from-emerald-900 via-teal-900 to-slate-900 text-white px-4 py-2 flex flex-wrap items-center justify-between text-xs border-b border-emerald-500/30 sticky top-0 z-50 shadow-md">
+    <div class="flex items-center space-x-2">
+      <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 animate-pulse">
+        DEMO MODE ACTIVE
+      </span>
+      <span class="font-semibold text-emerald-200">Interactive Prototype:</span>
+      <span id="demo-step-text" class="text-slate-300">Seeded with realistic Andhra Pradesh agricultural supply chain data.</span>
+    </div>
+    <div class="flex items-center space-x-3 mt-1 sm:mt-0">
+      <button onclick="window.traceHarvest.nextDemoStep()" id="demo-next-btn" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white font-medium flex items-center space-x-1 shadow transition">
+        <span>Step Tour</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </button>
+      <button onclick="window.traceHarvest.resetDemoData()" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 flex items-center space-x-1 transition">
+        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+        <span>Reset Baseline</span>
+      </button>
+      <a href="#login" class="text-emerald-300 hover:underline">Switch User</a>
+    </div>
+  </div>
+
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar -->
+    <aside id="main-sidebar" class="w-64 bg-slate-900 text-slate-300 flex flex-col flex-shrink-0 border-r border-slate-800 select-none transition-all duration-300 z-40">
+      <!-- App Header / Logo -->
+      <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+        <a href="#landing" class="flex items-center space-x-3 group">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-emerald-900/50 group-hover:scale-105 transition">
+            🌱
+          </div>
+          <div>
+            <div class="font-bold text-base tracking-tight text-white flex items-center gap-1.5">
+              <span>TraceHarvest</span>
+              <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-mono px-1.5 py-0.2 rounded border border-emerald-500/40">AI</span>
+            </div>
+            <div class="text-[10px] text-slate-400">Intelligent Trust Network</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- User Role Indicator Widget -->
+      <div class="p-3 mx-3 my-2 bg-slate-800/80 rounded-xl border border-slate-700/60 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <div id="current-user-avatar" class="text-2xl p-1 bg-slate-900 rounded-lg">👨‍🌾</div>
+          <div class="overflow-hidden">
+            <div id="current-user-name" class="font-semibold text-xs text-white truncate">Ramesh Naidu</div>
+            <div id="current-user-role" class="text-[10px] text-emerald-400 font-medium truncate">Farmer Workspace</div>
+          </div>
+        </div>
+        <a href="#login" title="Switch User or Role" class="text-slate-400 hover:text-white p-1 rounded hover:bg-slate-700">
+          <i data-lucide="log-in" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex-1 overflow-y-auto px-3 py-2 space-y-6 text-xs">
+        <!-- Overview -->
+        <div>
+          <div class="px-3 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Overview</div>
+          <div class="space-y-0.5">
+            <a href="#landing" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="landing">
+              <i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
+              <span>Vision & Mission</span>
+            </a>
+            <a href="#dashboard" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="dashboard">
+              <i data-lucide="layout-dashboard" class="w-4 h-4 text-teal-400"></i>
+              <span>Main Dashboard</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Intelligence Section -->
+        <div>
+          <div class="px-3 mb-1 text-[10px] font-bold text-emerald-400 uppercase tracking-wider flex items-center justify-between">
+            <span>Intelligence 360</span>
+            <span class="text-[9px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded">NEW</span>
+          </div>
+          <div class="space-y-0.5">
+            <a href="#trends" class="nav-link flex items-center justify-between px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition font-medium" data-page="trends">
+              <div class="flex items-center space-x-2.5">
+                <i data-lucide="trending-up" class="w-4 h-4 text-cyan-400"></i>
+                <span>Trend Intelligence</span>
+              </div>
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            </a>
+            <a href="#bullseye" class="nav-link flex items-center justify-between px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition font-medium" data-page="bullseye">
+              <div class="flex items-center space-x-2.5">
+                <i data-lucide="crosshair" class="w-4 h-4 text-neon-green"></i>
+                <span>Bull's-Eye Precision</span>
+              </div>
+              <span class="text-[9px] bg-cyan-500/20 text-cyan-300 px-1 rounded font-mono">RADIAL</span>
+            </a>
+            <a href="#detective" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="detective">
+              <i data-lucide="search-check" class="w-4 h-4 text-amber-400"></i>
+              <span>AI Detective Engine</span>
+            </a>
+            <a href="#coldchain" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="coldchain">
+              <i data-lucide="thermometer-snowflake" class="w-4 h-4 text-sky-400"></i>
+              <span>Cold-Chain Monitor</span>
+            </a>
+            <a href="#recall" class="nav-link flex items-center justify-between px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="recall">
+              <div class="flex items-center space-x-2.5">
+                <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-400"></i>
+                <span>Recall Command Centre</span>
+              </div>
+              <span id="active-recalls-badge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-rose-500 text-white font-bold">1</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Traceability & Operations -->
+        <div>
+          <div class="px-3 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Traceability Ops</div>
+          <div class="space-y-0.5">
+            <a href="#batches" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="batches">
+              <i data-lucide="boxes" class="w-4 h-4 text-indigo-400"></i>
+              <span>Batches & Registration</span>
+            </a>
+            <a href="#transfers" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="transfers">
+              <i data-lucide="truck" class="w-4 h-4 text-orange-400"></i>
+              <span>Transfer Logistics</span>
+            </a>
+            <a href="#inspections" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="inspections">
+              <i data-lucide="flask-conical" class="w-4 h-4 text-violet-400"></i>
+              <span>Quality Inspections</span>
+            </a>
+            <a href="#passport" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="passport">
+              <i data-lucide="qr-code" class="w-4 h-4 text-emerald-400"></i>
+              <span>Digital Passport</span>
+            </a>
+            <a href="#consumer" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="consumer">
+              <i data-lucide="shopping-bag" class="w-4 h-4 text-pink-400"></i>
+              <span>Consumer Scan Portal</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Profiles & System -->
+        <div>
+          <div class="px-3 mb-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Stakeholders & Admin</div>
+          <div class="space-y-0.5">
+            <a href="#farmer" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="farmer">
+              <i data-lucide="award" class="w-4 h-4 text-amber-400"></i>
+              <span>Farmer Credibility</span>
+            </a>
+            <a href="#reports" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="reports">
+              <i data-lucide="file-spreadsheet" class="w-4 h-4 text-blue-400"></i>
+              <span>Analytics & CSV Reports</span>
+            </a>
+            <a href="#settings" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="settings">
+              <i data-lucide="settings" class="w-4 h-4 text-slate-400"></i>
+              <span>System & Audit Log</span>
+            </a>
+            <a href="#login" class="nav-link flex items-center space-x-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition" data-page="login">
+              <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i>
+              <span>Switch User / Login</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="p-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+        <span class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+          <span>Andhra Grid v2.0</span>
+        </span>
+        <button onclick="window.traceHarvest.launchGuidedDemo()" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
+          <span>Demo Tour</span>
+          <i data-lucide="play" class="w-3 h-3"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 flex flex-col h-screen overflow-y-auto bg-slate-50 relative" id="main-scroll-container">
+      <!-- Top Bar -->
+      <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 px-6 py-3 flex items-center justify-between sticky top-0 z-30 shadow-sm">
+        <div class="flex items-center space-x-4">
+          <button id="sidebar-toggle" class="text-slate-500 hover:text-slate-700 focus:outline-none lg:hidden">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <div>
+            <h1 id="page-title" class="text-lg font-bold text-slate-900 tracking-tight">Executive Dashboard</h1>
+            <p id="page-subtitle" class="text-xs text-slate-500">Real-time digital chain of custody across Andhra Pradesh agri corridors</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <!-- Fast Role Switcher Dropdown in Header -->
+          <div class="relative inline-block text-left">
+            <select id="quick-role-select" onchange="window.traceHarvest.switchUserRole(this.value)" class="text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-emerald-500 cursor-pointer">
+              <option value="Farmer">👨‍🌾 Farmer (Ramesh Naidu)</option>
+              <option value="Transporter">🚚 Transporter (Jagan Mohan)</option>
+              <option value="Warehouse Manager">🏬 Warehouse (S. K. Verma)</option>
+              <option value="Retailer">🛒 Retailer (Priya Rao)</option>
+              <option value="Food Safety Admin" selected>🛡️ Food Safety Admin (Dr. Aruna Reddy)</option>
+              <option value="Consumer">👩‍💼 Consumer (Aditi Sharma)</option>
+            </select>
+          </div>
+
+          <!-- Direct Launch Demo Action -->
+          <button onclick="window.traceHarvest.startIntelligenceDemoFlow()" class="px-3 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-xs font-semibold rounded-lg shadow-sm hover:from-emerald-500 hover:to-teal-600 flex items-center space-x-1.5 transition">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Launch Intelligence Demo</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Global Notification / Banner Container -->
+      <div id="alert-banner-container" class="px-6 pt-4 hidden"></div>
+
+      <!-- PAGE CONTAINERS (SPA View Container) -->
+      <div id="content-area" class="p-6 flex-1">
+        <!-- Content will be injected dynamically by app.js based on window.location.hash -->
+        <div id="loading-spinner" class="flex flex-col items-center justify-center h-64 text-slate-400">
+          <i data-lucide="loader-2" class="w-8 h-8 animate-spin text-emerald-600 mb-2"></i>
+          <span class="text-sm font-medium">Loading TraceHarvest Network Data...</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Global Modal Container -->
+  <div id="global-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div id="modal-content" class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-200">
+      <!-- Modal dynamically populated -->
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
